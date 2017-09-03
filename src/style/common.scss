@@ -1,0 +1,231 @@
+@import './function.scss';
+@import './var.scss';
+
+// 字体图标
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: pxToRem(32px);
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-right{
+    @extend .iconfont;
+    &:after{
+        content: '\e607';
+    }
+}
+.icon-close{
+    @extend .iconfont;
+    &:after{
+        content: '\e611';
+    }
+}
+
+.icon-add{
+    @extend .iconfont;
+    &:after{
+        content: '\e603';
+    }
+}
+
+.icon-search{
+    @extend .iconfont;
+    &:after{
+        content: '\e60f';
+    }
+}
+
+
+// 分割线
+hr{
+    border: 0;
+    border-top: 1px solid $bd-color;
+    margin: 0;
+}
+// border
+.bd{
+    border:1px solid $bd-color;
+}
+// 上border
+.bd-1{
+    border: 0;
+    border-top: 1px solid $bd-color;
+}
+// 下border
+.bd-0-0-1{
+    border: 0;
+    border-bottom: 1px solid $bd-color;
+}
+// 上下border
+.bd-1-0-1{
+    border: 0;
+    border-top: 1px solid $bd-color;
+    border-bottom: 1px solid $bd-color;
+}
+
+// 圆角
+.bdr-100{
+    border-radius: 100%;
+}
+.bdr-2{
+    border-radius: pxToRem(2px);
+}
+.bdr-4{
+    border-radius: pxToRem(4px);
+}
+.bdr-6{
+    border-radius: pxToRem(6px);
+}
+.bdr-8{
+    border-radius: pxToRem(8px);
+}
+.bdr-10{
+    border-radius: pxToRem(10px);
+}
+.bdr-12{
+    border-radius: pxToRem(12px);
+}
+.bdr-14{
+    border-radius: pxToRem(14px);
+}
+.bdr-16{
+    border-radius: pxToRem(16px);
+}
+.bdr-18{
+    border-radius: pxToRem(18px);
+}
+.bdr-20{
+    border-radius: pxToRem(2px);
+}
+
+// 文本
+.text{
+    color: $primary-text-color;
+}
+.sub-text{
+    color: $secondary-text-color;
+}
+
+.text36{
+    font-size: pxToRem(36px);
+}
+.text34{
+    font-size: pxToRem(34px);
+}
+.text32{
+    font-size: pxToRem(32px);
+}
+.text30{
+    font-size: pxToRem(30px);
+}
+.text28{
+    font-size: pxToRem(28px);
+}
+.text26{
+    font-size: pxToRem(26px);
+}
+.text24{
+    font-size: pxToRem(24px);
+}
+.text22{
+    font-size: pxToRem(22px);
+}
+.text20{
+    font-size: pxToRem(20px);
+}
+
+
+
+
+
+// padding
+// .pd-20{
+//     padding: pxToRem(20px);
+// }
+// .pd-0-15{
+//     padding: 0 15px;
+// }
+// .pd-0-20{
+//     padding: 0 pxToRem(20px);
+// }
+// .pd-20-0{
+//     padding: pxToRem(20px) 0;
+// }
+
+// .pd-12-15{
+//     padding: 12px 15px;
+// }
+
+// .pd-20-30{
+//     padding: pxToRem(20px) pxToRem(30px);
+// }
+
+// .pd-0-30{
+//     padding: 0 pxToRem(30px);
+// }
+
+
+// flex
+.flex{
+    display: flex;
+}
+
+.flex-1{
+    flex: 1;
+}
+
+.flex-row{
+    flex-direction: row;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+.flex-v-center{
+    align-items: center;
+}
+
+.flex-h-center{
+    justify-content: center;
+}
+
+// 布局
+.v-c>*{
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.v-c::after{
+    content:"";
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.h-c{
+    text-align: center;
+}
+
+// 杂项
+.gutter{
+    height: 12px;
+    background-color: $bg-color;
+    border-bottom: solid 1px $bd-color;
+}
+
+::-webkit-input-placeholder {
+    color: $placeholder-color;
+}
+
+.ell{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
