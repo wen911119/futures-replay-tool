@@ -1,7 +1,7 @@
 import { isHybrid, isWeChat } from '@/utils/env'
 
 
-let toast, alert, confirm, prompt
+let toast, alert, confirm, prompt, loading
 if (isHybrid()) {
     // 由app实现这些方法
 } else if (isWeChat()) {
@@ -23,12 +23,23 @@ if (isHybrid()) {
     prompt = function (message = 'prompt', title = '提示', btns = ['确定', '取消']) {
 
     }
+
+    loading = {
+        show(msg = '') {
+            console.log('loading-show:' + msg)
+        },
+        hide() {
+            console.log('loading-hide')
+        }
+    }
+
 }
 export default {
     Toast: toast,
     Alert: alert,
     Confirm: confirm,
     Prompt: prompt,
+    Loading: loading,
     install: function (Vue) {
         Object.defineProperties(Vue.prototype, {
             $toast: {
@@ -49,6 +60,11 @@ export default {
             $prompt: {
                 get() {
                     return prompt
+                }
+            },
+            $Loading: {
+                get() {
+                    return loading
                 }
             }
         })
