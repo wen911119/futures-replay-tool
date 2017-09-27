@@ -1,14 +1,14 @@
 import { isHybrid, isWeChat } from '@/utils/env'
 
 
-let datetimePicker, cityPicker, actionSheet, picker
+let DATETIMEPICKER, CITYPICKER, ACTIONSHEET, PICKER
 if (isHybrid()) {
     // 由app实现这些方法
 } else if (isWeChat()) {
     // 由微信js sdk 实现这些方法
 } else {
     // web 实现
-    datetimePicker = function (ts = Date.now(), type = 'minute') {
+    DATETIMEPICKER = function (ts = Date.now(), type = 'minute') {
         // type='year' 
         // 2017
         // type='month'
@@ -25,7 +25,7 @@ if (isHybrid()) {
         // 返回时间戳        
     }
 
-    cityPicker = function (where = {}, level = 4, title = '请选择地区') {
+    CITYPICKER = function (where = {}, level = 4, title = '请选择地区') {
         // where = {
         //     province:{
         //         name:'安徽省',
@@ -47,42 +47,18 @@ if (isHybrid()) {
         // level = 3
         // 返回 where 值
     }
-    actionSheet = function (options = ['飞机', '火车'], cancel = '取消') {
+    ACTIONSHEET = function (options = ['飞机', '火车'], cancel = '取消') {
         console.log(options, cancel)
         // 返回索引
     }
-    picker = function (options = [1, 2, 3, 4, 5, 6, 7, 8, 9]) {
+    PICKER = function (options = [1, 2, 3, 4, 5, 6, 7, 8, 9]) {
         console.log(options)
         // 返回索引
     }
 }
 export default {
-    DatetimePicker: datetimePicker,
-    CityPicker: cityPicker,
-    ActionSheet: actionSheet,
-    Picker: picker,
-    install: function (Vue) {
-        Object.defineProperties(Vue.prototype, {
-            $DatetimePicker: {
-                get() {
-                    return datetimePicker
-                }
-            },
-            $CityPicker: {
-                get() {
-                    return cityPicker
-                }
-            },
-            $ActionSheet: {
-                get() {
-                    return actionSheet
-                }
-            },
-            $Picker: {
-                get() {
-                    return picker
-                }
-            }
-        })
-    }
+    DATETIMEPICKER,
+    CITYPICKER,
+    ACTIONSHEET,
+    PICKER
 }

@@ -1,9 +1,10 @@
 import { isHybrid, isWeChat } from '@/utils/env.js'
-import { Loading } from './notice.js'
+import { LOADING } from './notice.js'
+import { GETDATA } from './storage.js'
 import { getErrorMsg } from '@/utils/errorcode.js'
 import axios from 'axios'
 
-let get, post
+let GET, POST
 if (isHybrid()) {
     // 由app实现这些方法
 } else if (isWeChat()) {
@@ -13,7 +14,7 @@ if (isHybrid()) {
     //添加一个请求拦截器
     axios.interceptors.request.use(function (config) {
         //在请求发出之前进行一些操作
-        let token = localStorage.getItem('token')
+        let token = GETDATA('token')
         config.headers.token = token
         return config;
     }, function (err) {
@@ -34,14 +35,14 @@ if (isHybrid()) {
     //     return Promise.reject(error);
     // })
 
-    get = function (url, params, loading = true) {
-        loading && Loading.show()
+    GET = function (url, params, loading = true) {
+        loading && LOADING.show()
         return new Promise(async function (resolve, reject) {
             try {
                 let ret = await axios.get(url, {
                     params: params
                 })
-                loading && Loading.hide()
+                loading && LOADING.hide()
                 if (ret.code == 0) {
                     resolve(ret.data)
                 } else {
@@ -54,12 +55,12 @@ if (isHybrid()) {
         })
     }
 
-    post = function (url, params, loading = true) {
-        loading && Loading.show()
+    POST = function (url, params, loading = true) {
+        loading && LOADING.show()
         return new Promise(async function (resolve, reject) {
             try {
                 let ret = await axios.post(url, params)
-                loading && Loading.hide()
+                loading && LOADING.hide()
                 if (ret.code == 0) {
                     resolve(ret.data)
                 } else {
@@ -74,21 +75,7 @@ if (isHybrid()) {
 }
 
 
-export default {
-    Get: get,
-    Post: post,
-    install: function (Vue) {
-        Object.defineProperties(Vue.prototype, {
-            $Get: {
-                get() {
-                    return get
-                }
-            },
-            $Post: {
-                get() {
-                    return post
-                }
-            }
-        })
-    }
+export {
+    GET,
+    POST
 }
