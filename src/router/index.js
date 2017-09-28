@@ -8,7 +8,7 @@ export default new Router({
             path: '/',
             name: 'Demo',
             component: function (resolve) {
-                require([`@/modules/demo/${_TEMPLATE_}/app.vue`], resolve)
+                require(['@/modules/demo/app.vue'], resolve)
             }
         }
     ]

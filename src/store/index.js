@@ -1,11 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
-import home from './modules/home'
-import theme from './modules/theme'
-import list from './modules/list'
-import search from './modules/search'
-import goods from './modules/goods'
+import demo from './modules/demo/index'
 
 Vue.use(Vuex)
 
@@ -19,11 +14,7 @@ export default new Vuex.Store({
     getters: {},
     mutations: {},
     modules: {
-        home,
-        theme,
-        list,
-        search,
-        goods
+        demo
     },
     strict: debug
 })

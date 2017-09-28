@@ -1,3 +1,3 @@
 import { isHybrid, isWeChat } from '@/utils/env'
 
-let PUSH, BACK,
+let PUSH, BACK

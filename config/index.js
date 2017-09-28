@@ -36,7 +36,6 @@ module.exports = {
     cssSourceMap: false
   },
   custom: {
-    template: "mecity", // default=>默认模版；mecity=>mecity模版
     lang: "en-US",    // en-US=>英文；zh-CN=> 中文
     theme: "default" 
   }

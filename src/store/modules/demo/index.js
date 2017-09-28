@@ -1,4 +1,4 @@
-const Goods = {
+const Demo = {
     namespaced: true,
     state() {
         return {
@@ -8,7 +8,9 @@ const Goods = {
     actions: {
 
     },
-    getters: {},
+    getters: {
+
+    },
     mutations: {
 
     },
@@ -17,4 +19,4 @@ const Goods = {
     }
 }
 
-export default Goods
+export default Demo
