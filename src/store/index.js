@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import demo from './modules/demo/index'
+import replay from './modules/replay/index'
 
 Vue.use(Vuex)
 
@@ -14,7 +15,8 @@ export default new Vuex.Store({
     getters: {},
     mutations: {},
     modules: {
-        demo
+        demo,
+        replay
     },
     strict: debug
 })

@@ -10,6 +10,13 @@ export default new Router({
             component: function (resolve) {
                 require(['@/modules/demo/app.vue'], resolve)
             }
+        },
+        {
+            path: '/replay',
+            name: 'replay',
+            component: function (resolve) {
+                require(['@/modules/replay/app.vue'], resolve)
+            }
         }
     ]
 })
