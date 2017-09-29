@@ -50,9 +50,9 @@ const Replay = {
             // 更新拐点
             let _ln = state.points.length
             if (_ln >= 2) {
-                let _pre = state.points[_ln - 2].number,
-                    _current = state.points[_ln - 1].number,
-                    _next = point.number
+                let _pre = state.points[_ln - 2].number
+                let _current = state.points[_ln - 1].number
+                let _next = point.number
                 if (_checkBreakPoint(_pre, _current, _next)) {
                     // 中间一个是拐点
                     state.breakPoint = _current
